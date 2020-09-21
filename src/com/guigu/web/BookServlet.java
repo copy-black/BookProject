@@ -36,16 +36,43 @@ public class BookServlet extends BaseServlet {
     }
 
     protected void delete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+   //1.获取请求参数id,图书编程
+     int id=WebUtils.parseInt(req.getParameter("id"),0);
 
+   //2.调用bookservice.deleteBookById()删除图书
+
+        bookService.deleteBookById(id);
+
+   //3.重定向回到图书列表管理页面
+
+    resp.sendRedirect(req.getContextPath()+"/manager/bookServlet?action=list");
     }
 
     protected void update(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //1.获取请求参数--封装成Book对象
+
+        //2.调用BookService.updateBook(book);
+
+        //3.重定向回图书列表管理页面
+        //地址：/工程名/manager/bookServlet?action=list
+
+
 
     }
 
+    protected void getBook(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //1.获取图书编号
+         int id =WebUtils.parseInt(req.getParameter("id"),0);
+
+        //2.调用bookservice.queryBookById(id):Book:得到修改的的图书信息。
+            Book book =bookService.queryBookById(id);
+           //3.把图书保存到Requtest域中
+                req.setAttribute("book",book);
+        //4.请求转发到/pages/manager/book_edit.jsp
+        req.getRequestDispatcher("/pages/manager/book_edit.jsp").forward(req,resp);
+
+    }
     protected void list(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
         //1.通过BookService查询全部图书
         List<Book> books = bookService.queryBooks();
         //2。把全部图书保存到request域中
