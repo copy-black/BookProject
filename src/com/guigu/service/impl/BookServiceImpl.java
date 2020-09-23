@@ -4,6 +4,7 @@ import com.guigu.dao.BookDao;
 import com.guigu.dao.impl.BaseDao;
 import com.guigu.dao.impl.BookDaoImpl;
 import com.guigu.pojo.Book;
+import com.guigu.pojo.Page;
 import com.guigu.service.BookService;
 
 import java.security.PrivateKey;
@@ -46,5 +47,11 @@ public class BookServiceImpl  implements BookService {
     public List<Book> queryBooks() {
 
         return  bookDao.queryBooks();
+    }
+
+    @Override
+    public Page<Book> page(int pageNO, int pageSize) {
+
+        return null;
     }
 }

@@ -1,6 +1,7 @@
 package com.guigu.web;
 
 import com.guigu.pojo.Book;
+import com.guigu.pojo.Page;
 import com.guigu.service.BookService;
 import com.guigu.service.impl.BookServiceImpl;
 import com.guigu.utils.WebUtils;
@@ -50,14 +51,12 @@ public class BookServlet extends BaseServlet {
 
     protected void update(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //1.获取请求参数--封装成Book对象
-
-        //2.调用BookService.updateBook(book);
-
+        Book book =WebUtils.copyParamToBean(req.getParameterMap(),new Book());
+        //2.调用bookService.updateBook(book);
+            bookService.updateBook(book);
         //3.重定向回图书列表管理页面
         //地址：/工程名/manager/bookServlet?action=list
-
-
-
+        resp.sendRedirect(req.getContextPath()+"/manager/bookServlet?action=list");
     }
 
     protected void getBook(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -78,14 +77,31 @@ public class BookServlet extends BaseServlet {
         //2。把全部图书保存到request域中
 
         req.setAttribute("books",books);
-
-
         //3.请求转发到/pages/manager/book_manager.jsp
 
      req.getRequestDispatcher("/pages/manager/book_manager.jsp").forward(req,resp);
 
         // req.getRequestDispatcher("/pages/manager/book_manager.jsp").forward(req,resp);
 
+    }
+
+    /**
+     * 处理分页功能
+     * @param req
+     * @param resp
+     * @throws ServletException
+     * @throws IOException
+     */
+    protected void page(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        //1.获取请求的参数  pageNo 和pageSize
+        int pageNO =WebUtils.parseInt(req.getParameter("pageNO"),1);
+        int pageSize=WebUtils.parseInt(req.getParameter("pageSize"),Page.PAGE_SIZE);
+        //2.调用BookService.page(pageNO,pageSize) :Page对象
+        Page<Book> page=bookService.page(pageNO,pageSize);
+        //3.保存Page对象到Request 域 中
+        req.setAttribute("page",page);
+        //4.请求转发到pages/manager/book_manager.jsp
+        req.getRequestDispatcher("/pages/manager/book_manager.jsp").forward(req,resp);
 
     }
 }

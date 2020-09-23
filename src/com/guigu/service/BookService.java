@@ -1,6 +1,7 @@
 package com.guigu.service;
 
 import com.guigu.pojo.Book;
+import com.guigu.pojo.Page;
 
 import java.util.List;
 
@@ -21,4 +22,6 @@ public interface BookService {
     public Book queryBookById(Integer id );
 
     public List<Book>  queryBooks();
+
+    Page<Book> page(int pageNO, int pageSize);
 }
