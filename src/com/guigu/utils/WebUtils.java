@@ -18,7 +18,6 @@ public class WebUtils {
      * web
      * service
      * dao
-     *
      * @param value
      * @param bean
      */
@@ -36,27 +35,10 @@ public class WebUtils {
             System.out.println("注入之后" + bean);
         } catch (Exception e) {
 
-            e.printStackTrace();
+        e.printStackTrace();
         }
         return bean;
     }
 
-    /**
-     * 将字符串转化为int数据类型的数据
-     * @param strInt
-     * @param defaultValue
-     * @return
-     */
-
-    public static int parseInt(String strInt, int defaultValue) {
-        try {
-            return Integer.parseInt(strInt);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return defaultValue;
-    }
-
-
-
 }
+
