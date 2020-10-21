@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="560c3a41-2995-4b7a-af13-0420bd9c28a7" name="Default Changelist" comment="" />
+    <list default="true" id="560c3a41-2995-4b7a-af13-0420bd9c28a7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1elJmNAn2dgMbGkDqOdhKGxrxev" />
   <component name="ProjectViewState">
@@ -30,10 +35,22 @@
       <option name="presentableId" value="Default" />
       <updated>1594890403537</updated>
       <workItem from="1594890405007" duration="16000" />
+      <workItem from="1601101727549" duration="10000" />
+      <workItem from="1601101804387" duration="113000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="581" y="187" key="FileChooserDialogImpl" timestamp="1601101734242">
+      <screen x="66" y="0" width="1470" height="864" />
+    </state>
+    <state x="581" y="187" key="FileChooserDialogImpl/66.0.1470.864@66.0.1470.864" timestamp="1601101734242" />
+    <state x="481" y="256" key="com.intellij.ide.util.TipDialog" timestamp="1601101811399">
+      <screen x="66" y="0" width="1470" height="864" />
+    </state>
+    <state x="481" y="256" key="com.intellij.ide.util.TipDialog/66.0.1470.864@66.0.1470.864" timestamp="1601101811399" />
   </component>
 </project>
